@@ -1,0 +1,21 @@
+@import "bootstrap-cfg";
+
+.header-container {
+  padding: 40px 0
+}
+.menu-section {
+  width: 400px;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.menu-item {
+  text-transform: uppercase;
+
+  &:hover {
+    cursor: pointer;
+    color: $primary
+  }
+}

@@ -1,0 +1,18 @@
+
+.box {
+  &__head {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+}
+
+.social-lists {
+  width: 100px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+
+  &__icon:hover {
+    cursor: pointer;
+  }
+}
