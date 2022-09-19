@@ -1,0 +1,106 @@
+@import "bootstrap-cfg";
+$padding-y: 200px;
+$height-inner: calc(400px + 2*$padding-y);
+$cover-clr: #f4ece6;
+
+.bg-cover {
+  position: relative;
+  height: $height-inner;
+
+  &__left-section {
+    height: $height-inner;
+    background-color: #e6dace;
+  }
+}
+
+
+.content {
+  position: absolute;
+  top: 200px;
+  left: calc((100vw - 800px)/2);
+  //border: solid 1px red;
+
+
+  display: flex;
+  flex-flow: row;
+  width: 800px;
+
+  &__left {
+    flex: 0 0 300px;
+  }
+
+  &__right {
+    flex: 1 1 auto;
+  }
+}
+
+.about-me {
+  background-color: $cover-clr;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+
+  &__body {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    flex: 1 0 auto;
+  }
+
+  &__social {
+    flex: 0 0 45px;
+    width: 100%;
+    background-color: white;
+  }
+}
+
+.social-lists {
+  margin: 0 auto;
+  width: 120px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-me-shadow {
+  box-shadow: -0.375rem 0.375rem 1rem rgb(0 0 0 / 15%) ;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  background-image: url("/assets/img/avar2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  border-radius: 100%;
+}
+
+.name {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.sep {
+  content: '';
+  height: 2px;
+  width: 80px;
+  background-color: black;
+}
+
+.title-job {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+
+.nav-btn {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.greet-line {
+  font-size: 5.375rem;
+  font-weight: bold;
+}
