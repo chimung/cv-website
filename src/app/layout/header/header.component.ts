@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'cv-header',
@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  @ViewChild('responsiveMenu', { static: true })
+  responsiveMenu!: ElementRef
+
+  isOpenMenu = false;
+
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.responsiveMenu)
   }
 
+  openMenu() {
+    this.isOpenMenu = true;
+  }
+
+  closeMenu() {
+    this.isOpenMenu = false;
+  }
 }
