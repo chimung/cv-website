@@ -19,3 +19,18 @@
     color: $primary
   }
 }
+
+.identity-section {
+  &__name {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  &__separator {
+    margin: 0 0.5rem;
+  }
+
+  &__job {
+    text-transform: uppercase;
+  }
+}
