@@ -4,33 +4,86 @@ $height-inner: calc(400px + 2*$padding-y);
 $cover-clr: #f4ece6;
 
 .bg-cover {
-  position: relative;
-  height: $height-inner;
+  display: flex;
 
-  &__left-section {
-    height: $height-inner;
+  height: 200px;
+  flex-flow: column;
+
+  &__leading {
+    flex: 0 0 40%;
+  }
+
+  &__trailing {
+    flex: 1 1 40%;
     background-color: #e6dace;
   }
+
+
+  @include media-breakpoint-up(md) {
+    height: $height-inner;
+    flex-flow: row;
+
+    &__leading {
+      height: $height-inner;
+      background-color: #e6dace;
+      flex: 0 0 40%;
+    }
+
+    &__trailing {
+      flex: 1 1 auto;
+    }
+  }
+
 }
 
 
 .content {
+  $width-container: 100vw;
+  $height-container: 395px;
+  $top-pos-container: 100px;
+
   position: absolute;
-  top: 200px;
-  left: calc((100vw - 800px)/2);
-  //border: solid 1px red;
+
+  @mixin style-content {
+    top: $top-pos-container;
+    left: calc((100vw - $width-container)/2);
 
 
-  display: flex;
-  flex-flow: row;
-  width: 800px;
-
-  &__left {
-    flex: 0 0 300px;
+    width: $width-container;
+    height: $height-container;
   }
 
-  &__right {
-    flex: 1 1 auto;
+  @include style-content;
+
+  display: flex;
+  flex-flow: column;
+
+  @include media-breakpoint-up(sm) {
+    $width-container: 380px;
+    $height-container: auto;
+    $top-pos-container: 200px;
+
+    @include style-content;
+    flex-flow: column;
+  }
+
+  @include media-breakpoint-up(md) {
+    $width-container: 800px;
+    $height-container: 395px;
+    $top-pos-container: 200px;
+
+    @include style-content;
+    flex-flow: row;
+
+
+    &__leading {
+      flex: 0 0 300px;
+      margin-right: 1.5rem;
+    }
+
+    &__trailing {
+      flex: 1 1 auto;
+    }
   }
 }
 
