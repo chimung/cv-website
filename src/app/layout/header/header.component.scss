@@ -64,9 +64,11 @@
 }
 
 .identity-section {
+  font-size: scale-text-size('lg');
+
   &__name {
-    font-size: scale-text-size('xl');
     font-weight: bold;
+    text-transform: uppercase;
   }
 
   &__separator {
@@ -75,6 +77,7 @@
 
   &__job {
     text-transform: uppercase;
+    white-space: nowrap;
   }
 }
 
