@@ -1,0 +1,53 @@
+@import "bootstrap-cfg";
+@import "custom-cfg";
+
+.title {
+  margin-top: 4rem;
+  font-size: scale-text-size('2xl');
+  font-weight: bold;
+  text-align: center;
+}
+
+.section-name {
+  font-size: scale-text-size('xl');
+  font-weight: bold;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 0 12px;
+
+  @include media-breakpoint-up(md) {
+    width: 700px;
+    margin: 0 auto;
+  }
+}
+
+
+.exp-box {
+  background-color: white;
+  padding: 4.5rem 3.5rem;
+
+  &__header {
+    color: $primary;
+    font-size: scale-text-size('lg');
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+
+  &__leading {
+    margin-bottom: 1.5rem;
+  }
+
+
+  &__position {
+    white-space: nowrap;
+    color: $black;
+    font-weight: bold;
+  }
+
+  &__comp-name {
+    white-space: nowrap;
+    color: rgba($black, 0.4);
+  }
+}

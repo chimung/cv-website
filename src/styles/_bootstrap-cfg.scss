@@ -6,6 +6,10 @@ $btn-border-radius: 1rem;
 $btn-padding-x: 1.5rem;
 $btn-padding-y: 0.375rem;
 
+// Color
+$primary: #0050ff;
+$secondary: #e6dace;
+
 // 3. Include remainder of required Bootstrap stylesheets
 @import "../../node_modules/bootstrap/scss/variables";
 
