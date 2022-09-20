@@ -1,0 +1,15 @@
+@function scale-text-size($key) {
+  $scale: (
+    '4xl': 3.052,
+    '3xl': 2.441,
+    '2xl': 1.953,
+    'xl': 1.563,
+    'lg': 1.25,
+    'md': 1,
+    'sm': 0.8,
+    'xs': 0.64,
+    '2xs': 0.512,
+  );
+
+  @return 1rem * map-get($scale, $key)
+}

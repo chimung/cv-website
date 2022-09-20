@@ -1,4 +1,5 @@
 @import "bootstrap-cfg";
+@import "custom-func";
 
 .header-container {
   padding: 40px 0
@@ -13,7 +14,7 @@
 
 .menu-toggle {
   &__icon {
-    font-size: 2rem;
+    font-size: scale-text-size('2xl');
 
     &:hover {
       cursor: pointer;
@@ -24,6 +25,8 @@
 
 .menu-item {
   text-transform: uppercase;
+  text-decoration: none;
+  color: unset;
 
   &:hover {
     cursor: pointer;
@@ -44,7 +47,7 @@
 
   &__close-icon {
     position: absolute;
-    font-size: 1.5rem;
+    font-size: scale-text-size('xl');
     top: 1.5rem;
     right: 1.5rem;
   }
@@ -53,7 +56,6 @@
     margin-top: 5rem;
 
     & > .menu-item {
-      //font-size: 1.25rem;
       padding: 1.25rem 0;
       text-align: center;
     }
@@ -63,7 +65,7 @@
 
 .identity-section {
   &__name {
-    font-size: 1.25rem;
+    font-size: scale-text-size('xl');
     font-weight: bold;
   }
 
