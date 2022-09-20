@@ -1,21 +1,38 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {NavigationStart, Router} from "@angular/router";
+import {Subject, takeUntil} from "rxjs";
 
 @Component({
   selector: 'cv-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
+  destroy$: Subject<void> = new Subject<void>();
 
   @ViewChild('responsiveMenu', { static: true })
   responsiveMenu!: ElementRef
 
   isOpenMenu = false;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
+
 
   ngOnInit(): void {
-    console.log(this.responsiveMenu)
+    this.router.events
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((event) => {
+        if (event instanceof NavigationStart) {
+          // close menu
+          this.closeMenu();
+        }
+      })
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
   }
 
   openMenu() {
