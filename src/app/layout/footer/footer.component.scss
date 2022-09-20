@@ -12,7 +12,14 @@
   flex-flow: row;
   justify-content: space-between;
 
-  &__icon:hover {
-    cursor: pointer;
+  &__icon {
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--img {
+      width: 16px;
+    }
   }
+
 }

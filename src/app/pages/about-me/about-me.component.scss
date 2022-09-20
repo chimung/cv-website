@@ -112,6 +112,16 @@ $cover-clr: #f4ece6;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  &__icon {
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--img {
+      width: 16px;
+    }
+  }
 }
 
 .about-me-shadow {
